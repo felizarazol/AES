@@ -9,7 +9,9 @@ package controladores;
  *
  * @author Julian
  */
+import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -28,6 +30,8 @@ public class AES {
 	private SecureRandom rand = new SecureRandom();
 	private Key key;
 	private State state;
+        ArrayList<ArrayList> roundsArray =  new ArrayList<ArrayList>();// este arreglo contiene un ArrayList de matrices por cada round de cifrado
+        ArrayList<ArrayList> roundsDesArray =  new ArrayList<ArrayList>();// este arreglo contiene un ArrayList de matrices por cada round de descifrado
 	
 	/**
 	 *  Takes in a 128, 296, or 256-bit key to use as the symmetric key
@@ -72,6 +76,15 @@ public class AES {
 	 *  @return   encrypted message
 	 */
 	public byte[] encrypt(byte[] message) {
+            /*
+                este arreglo contiene las matrices desde el primer round en el orden:
+                Matriz de inicio (ARK)
+                SB
+                SR
+                MC // en el último round no hay MC por lo tanto lo rellenamos de 0s
+                RoundKey
+            */
+            ArrayList<String> matrixArray =  new ArrayList<String>();
 		int encryptedLength;
 		if ((message.length % 16) == 0) {
 			encryptedLength = message.length;
@@ -84,28 +97,41 @@ public class AES {
 		
 		for (int i = 0; i < message.length; i += 16) {					// break up the byte array into 16-byte 2d arrays
 			this.state = new State(Arrays.copyOfRange(message, i, i + 16));
-			
-			System.out.println("round[" + 0 + "].initial: " + "state: " + Functions.bytesToHex(state.getBytes()));
-			state.addRoundKey(key.getKey());
-			
-			for (int k = 0; k < (Nr - 1); k++) {
-				System.out.println("round[" + k + "].start: " + "state: " + Functions.bytesToHex(state.getBytes()));
-				state.subBytes();
-				System.out.println("round[" + k + "].s_box: " + "state: " + Functions.bytesToHex(state.getBytes()));
-				state.shiftRows();
-				System.out.println("round[" + k + "].s_row: " + "state: " + Functions.bytesToHex(state.getBytes()));
-				state.mixColumns();
-				System.out.println("round[" + k + "].m_col: " + "state: " + Functions.bytesToHex(state.getBytes()));
-				state.addRoundKey(key.getKey());
-                                System.out.println("Nr"+k);
+                        matrixArray.add(state.prettyPrint());
+                        matrixArray.add("");//SB round 0
+                        matrixArray.add("");//SR round 0
+                        matrixArray.add("");//MC round 0
+                        byte[] keyByte=key.getKey();
+			state.addRoundKey(keyByte);
+                        matrixArray.add(key.prettyPrint(keyByte));//RK round 0
+                        roundsArray.add(matrixArray);
+                        matrixArray = new ArrayList<String>();
+			for (int k = 1; k < (Nr); k++) {
+                            System.out.println("Nr"+k);
+                            matrixArray.add(state.prettyPrint());
+                            state.subBytes();
+                            matrixArray.add(state.prettyPrint());
+                            state.shiftRows();
+                            matrixArray.add(state.prettyPrint());
+                            state.mixColumns();
+                            matrixArray.add(state.prettyPrint());
+                            keyByte=key.getKey();
+                            matrixArray.add(key.prettyPrint(keyByte));
+                            //key.prettyPrint(keyByte);
+                            state.addRoundKey(keyByte);
+                            roundsArray.add(matrixArray);
+                            matrixArray= new ArrayList<String>();
 			}       
-			System.out.println("round[" + (Nr-1) + "].start: " + "state: " + Functions.bytesToHex(state.getBytes()));
+                        matrixArray.add(state.prettyPrint());
 			state.subBytes();											// final round does not include mixColumns()
-			System.out.println("round[" + (Nr-1) + "].s_box: " + "state: " + Functions.bytesToHex(state.getBytes()));
+                        matrixArray.add(state.prettyPrint());
                         state.shiftRows();
-                        System.out.println("round[" + (Nr-1) + "].s_row: " + "state: " + Functions.bytesToHex(state.getBytes()));
-			state.addRoundKey(key.getKey());
-			
+                        matrixArray.add(state.prettyPrint());
+                        matrixArray.add(""); //MC del último round
+                        keyByte=key.getKey();
+			state.addRoundKey(keyByte);
+                        matrixArray.add(key.prettyPrint(keyByte));
+			//state.prettyPrint();
 			byte[] stateBytes = state.getBytes();
 			for (int n = 0; n < 16; n++) {
 				encrypted[i+n] = stateBytes[n];
@@ -113,8 +139,12 @@ public class AES {
 			if ((i + 16) != encryptedLength) {
 				key.resetCounter();
 			}
+                        roundsArray.add(matrixArray);
+                        //System.out.println("MATRIX"+matrixArray);
+                        //System.out.println("ROUNDS"+roundsArray);
+                        matrixArray = new ArrayList<String>();
 		}
-		
+		//System.out.println(roundsArray);
 		return encrypted;
 	}
 	
@@ -126,24 +156,59 @@ public class AES {
 	 *  @return   decrypted message
 	 */
 	public byte[] decrypt(byte[] cipher) {
+            /*
+                Para descifrar el orden de las matrices es:
+                ARK
+                MC
+                SR
+                SB
+                RoundKey
+                
+            */
+            ArrayList<String> matrixArray =  new ArrayList<String>();
 		int decryptedLength = cipher.length;
 		byte[] decrypted = new byte[decryptedLength];
 		
 		for (int i = 0; i < cipher.length; i += 16) {						// break up the byte array into 16-byte 2d arrays
 			this.state = new State(Arrays.copyOfRange(cipher, i, i + 16));
-
-			state.addRoundKey(key.getDecryptKey());
-			
+                        matrixArray.add(state.prettyPrint());
+                        matrixArray.add("");// MC Round de entrada
+                        matrixArray.add("");// MC Round de entrada
+                        matrixArray.add("");// MC Round de entrada
+                        byte[] keyDecripted = key.getDecryptKey();
+                        matrixArray.add(key.prettyPrint(keyDecripted));
+                        roundsDesArray.add(matrixArray);
+                        matrixArray = new ArrayList<String>();
+                        
+			state.addRoundKey(keyDecripted);
+                        matrixArray.add(state.prettyPrint());
+                        matrixArray.add("");//MC primer round
+                        state.invShiftRows();
+                        matrixArray.add(state.prettyPrint());// SR
+                        state.invSubBytes();
+                        matrixArray.add(state.prettyPrint());// SB
+			keyDecripted = key.getDecryptKey();
+                        matrixArray.add(key.prettyPrint(keyDecripted));
+                        roundsDesArray.add(matrixArray);
+                        matrixArray = new ArrayList<String>();
+                        
 			for (int k = 0; k < (Nr - 1); k++) {
-				state.invShiftRows();
-				state.invSubBytes();
-				state.addRoundKey(key.getDecryptKey());
-				state.invMixColumns();
+                                
+                            state.addRoundKey(keyDecripted);
+                            matrixArray.add(state.prettyPrint());
+                            state.invMixColumns();
+                            matrixArray.add(state.prettyPrint());
+                            state.invShiftRows();
+                            matrixArray.add(state.prettyPrint());// SR
+                            state.invSubBytes();
+                            matrixArray.add(state.prettyPrint());// SB
+                            keyDecripted = key.getDecryptKey();
+                            matrixArray.add(key.prettyPrint(keyDecripted));
+                            roundsDesArray.add(matrixArray);
+                            matrixArray = new ArrayList<String>();
 			}
-			
-			state.invShiftRows();										// final round does not include mixColumns()
-			state.invSubBytes();
-			state.addRoundKey(key.getDecryptKey());
+                        
+			state.addRoundKey(keyDecripted);
 			
 			byte[] stateBytes = state.getBytes();
 			for (int n = 0; n < 16; n++) {

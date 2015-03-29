@@ -164,16 +164,24 @@ public class State extends Functions {
 	/**
 	 *  prints the state in a pretty manner
 	 */
-	public void prettyPrint() {		
-		System.out.println("________________");
-		for (int i = 0; i < 4; i++) {
-			System.out.print("| ");
-			for (int k = 0; k < 4; k++) {
-				System.out.print(String.format("%02X", state[i][k]) + " ");
-			}
-			System.out.println(" |");
-		}
-		System.out.println("|______________|");
+	public String prettyPrint() {
+            String prettyString =  new String("");
+            prettyString +="_____________\n";
+            System.out.println("________________");
+            for (int i = 0; i < 4; i++) {
+                    prettyString += "| ";
+                    System.out.print("| ");
+                    for (int k = 0; k < 4; k++) {
+                            prettyString+=String.format("%02X", state[i][k]) + " ";
+                            System.out.print(String.format("%02X", state[i][k]) + " ");
+                    }
+                    prettyString+=" |\n";
+                    System.out.println(" |");
+            }
+            prettyString+="|___________|\n";
+            System.out.println("|______________|");
+            
+            return prettyString;
 	}
 	
 	public int[] invS_Box = {

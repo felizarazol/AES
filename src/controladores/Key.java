@@ -139,6 +139,26 @@ public class Key extends Functions {
 		keyCount -= 16;
 		return keyPart;
 	}
+        
+        public String prettyPrint(byte[] key) {		
+            String prettyString = new String("");
+		System.out.println("________________");
+                prettyString += "_____________\n";
+		for (int i = 0; i < 4; i++) {
+			System.out.print("| ");
+                        prettyString += "| ";
+			for (int k = 0+i ; k < 16; k=k+4) {
+                                prettyString += String.format("%02X", key[k]) + " ";
+				System.out.print(String.format("%02X", key[k]) + " ");
+			}
+                        prettyString += " |\n";
+			System.out.println(" |");
+		}
+                prettyString += "|___________|\n";
+		System.out.println("|______________|");
+                
+                return prettyString;
+	}
 	
 	
 	/**
