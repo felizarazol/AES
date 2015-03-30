@@ -94,7 +94,8 @@ public class AESFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
+        FrameDescifrar fdc =  new FrameDescifrar(this);
+        fdc.setVisible(true);
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     /**

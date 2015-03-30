@@ -13,6 +13,7 @@ import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.swing.JOptionPane;
 
 /**
  *  Implementation of AES
@@ -54,7 +55,7 @@ public class AES {
 			}
 			else {
 				System.out.println("Invalid key size");
-				System.exit(1);
+				JOptionPane.showMessageDialog(null, "Tamaño de llave invalido", "Error", JOptionPane.ERROR_MESSAGE);
 			}
 		}
                 Nr = Nk + 6;
@@ -233,29 +234,30 @@ public class AES {
 	 *  @param args  args[0] = message
 	 *  			 args[1] = key (optional: if none is provided, a random 16-bit key will be generated and used)
 	 */
-	public static void main(String[] args) {
-//		if (args.length < 1) {
-//			System.out.println("Usage: <message> <key>");
-//			System.out.println("The message can be any length but the key must be 16, 24, or 32 charactors long.");
-//			System.exit(1);
-//		}
-		AES aes;
-//		if (args.length < 2) {
-//			aes = new AES();
-//		}
-//		else {
-                byte[] testBytes = Functions.hexStringToByteArray("414553206573206d757920666163696c");
-			
-                byte[] testKey = Functions.hexStringToByteArray("2B7e151628aed2a6abf7158809cf4f3c");
-                
-                aes = new AES(testKey);	
-//        }
-		byte[] cipher = aes.encrypt(testBytes);
-		//byte[] cipher = aes.encrypt(Functions.hexStringToByteArray("00112233445566778899aabbccddeeff"));
-		//byte[] cipher = aes.encrypt(new String("<Insert generic super duper secret private message here#!@#$%!@$@!%>").getBytes());
-		//byte[] cipher = aes.encrypt(hexStringToByteArray("00000000000000000000000000000000"));
-		System.out.println("Cipher:  " + Functions.bytesToHex(cipher));
-		System.out.println("Message: " + new String(aes.decrypt(cipher)));
-                System.out.println(aes.Nr);
-	}
+//	public static void main(String[] args) {
+////		if (args.length < 1) {
+////			System.out.println("Usage: <message> <key>");
+////			System.out.println("The message can be any length but the key must be 16, 24, or 32 charactors long.");
+////			System.exit(1);
+////		}
+//		AES aes;
+////		if (args.length < 2) {
+////			aes = new AES();
+////		}
+////		else {
+//                byte[] testBytes = Functions.hexStringToByteArray("414553206573206d757920666163696c");
+//			
+//                byte[] testKey = Functions.hexStringToByteArray("2B7e151628aed2a6abf7158809cf4f3c");
+//                
+//                byte[] ciphertext = Functions.hexStringToByteArray("E448E574A374D90CC33C22AF9B8EAB7F");
+//                aes = new AES(testKey);	
+////        }
+//		//byte[] cipher = aes.encrypt(testBytes);
+//		//byte[] cipher = aes.encrypt(Functions.hexStringToByteArray("00112233445566778899aabbccddeeff"));
+//		//byte[] cipher = aes.encrypt(new String("<Insert generic super duper secret private message here#!@#$%!@$@!%>").getBytes());
+//		//byte[] cipher = aes.encrypt(hexStringToByteArray("00000000000000000000000000000000"));
+//		//System.out.println("Cipher:  " + Functions.bytesToHex(cipher));
+//		System.out.println("Message: " + new String(aes.decrypt(ciphertext)));
+//                System.out.println(aes.Nr);
+//	}
 }

@@ -51,25 +51,36 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtKey128" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="txtPlainText" alignment="0" min="-2" pref="267" max="-2" attributes="0"/>
+                          <Component id="txtCipherText" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="14" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnAtras" min="-2" pref="258" max="-2" attributes="0"/>
-                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnAtras" min="-2" pref="258" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtPlainText" min="-2" pref="258" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnRound1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnRound1" max="32767" attributes="0"/>
+                          <Component id="btnRoundInicial" alignment="0" pref="215" max="32767" attributes="0"/>
+                          <Component id="btnRound10" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnRound11" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnRound12" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnRound13" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnRound2" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnRound3" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnRound4" alignment="0" max="32767" attributes="0"/>
@@ -78,17 +89,11 @@
                           <Component id="btnRound7" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnRound8" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnRound9" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnRound10" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnRound11" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnRound13" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnRoundFinal" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnRoundInicial" alignment="1" min="-2" pref="215" max="-2" attributes="0"/>
-                          <Component id="btnRound12" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="txtCipherText" min="-2" pref="258" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -99,9 +104,9 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                      <Component id="txtPlainText" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtCipherText" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -122,12 +127,20 @@
                       <Component id="jButton15" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jSeparator2" min="-2" pref="11" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       <Component id="btnRoundInicial" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnRound10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnRound11" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnRound12" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnRound13" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnRound1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -147,19 +160,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnRound9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnRound10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnRound11" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnRound12" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnRound13" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnRoundFinal" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="txtCipherText" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPlainText" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnAtras" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -174,28 +179,19 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/vistas/Cifrar.PNG"/>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
       <Properties>
         <Property name="orientation" type="int" value="1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPlainText">
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mensaje: "/>
+        <Property name="text" type="java.lang.String" value="Mensaje Cifrado en hexadecimal: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnRoundInicial">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round Inicial"/>
+        <Property name="text" type="java.lang.String" value="Round Final"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRoundInicialActionPerformed"/>
@@ -203,7 +199,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 1"/>
+        <Property name="text" type="java.lang.String" value="Round 9"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound1ActionPerformed"/>
@@ -211,7 +207,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 2"/>
+        <Property name="text" type="java.lang.String" value="Round 8"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound2ActionPerformed"/>
@@ -219,7 +215,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 3"/>
+        <Property name="text" type="java.lang.String" value="Round 7"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound3ActionPerformed"/>
@@ -227,7 +223,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 4"/>
+        <Property name="text" type="java.lang.String" value="Round 6"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound4ActionPerformed"/>
@@ -243,7 +239,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 6"/>
+        <Property name="text" type="java.lang.String" value="Round 4"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound6ActionPerformed"/>
@@ -251,7 +247,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 7"/>
+        <Property name="text" type="java.lang.String" value="Round 3"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound7ActionPerformed"/>
@@ -259,7 +255,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound8">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 8"/>
+        <Property name="text" type="java.lang.String" value="Round 2"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound8ActionPerformed"/>
@@ -267,7 +263,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound9">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 9"/>
+        <Property name="text" type="java.lang.String" value="Round 1"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound9ActionPerformed"/>
@@ -275,7 +271,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound10">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 10"/>
+        <Property name="text" type="java.lang.String" value="Round 13"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound10ActionPerformed"/>
@@ -283,7 +279,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound11">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 11"/>
+        <Property name="text" type="java.lang.String" value="Round 12"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound11ActionPerformed"/>
@@ -291,7 +287,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound13">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 13"/>
+        <Property name="text" type="java.lang.String" value="Round 10"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound13ActionPerformed"/>
@@ -299,22 +295,22 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRoundFinal">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round Final"/>
+        <Property name="text" type="java.lang.String" value="Round Inicial"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRoundFinalActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCipherText">
+    <Component class="javax.swing.JTextField" name="txtPlainText">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mensaje Cifrado:"/>
+        <Property name="text" type="java.lang.String" value="Mensaje:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton15">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cifrar"/>
+        <Property name="text" type="java.lang.String" value="Descifrar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton15ActionPerformed"/>
@@ -393,7 +389,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRound12">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Round 12"/>
+        <Property name="text" type="java.lang.String" value="Round 11"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRound12ActionPerformed"/>
@@ -406,6 +402,23 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtrasActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="txtCipherText">
+      <Properties>
+        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+          <Format format="HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH" subtype="-1" type="5"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCipherTextActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/vistas/Descifrar.PNG"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

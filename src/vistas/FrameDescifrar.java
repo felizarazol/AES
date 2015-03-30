@@ -14,23 +14,23 @@ import javax.swing.JOptionPane;
  *
  * @author Julian
  */
-public class FrameCifrar extends JFrame {
+public class FrameDescifrar extends JFrame {
 
     JFrame parent;
     /**
      * Creates new form FrameCifrar
      */
-    public FrameCifrar(JFrame parent) {
+    public FrameDescifrar(JFrame parent) {
         this.parent = parent;
         initComponents();
         txtKey128.setEnabled(true);
         txtKey192.setEnabled(false);
         txtKey256.setEnabled(false);
         disableRounds();
-        btnRound10.setVisible(false);
-        btnRound11.setVisible(false);
-        btnRound12.setVisible(false);
         btnRound13.setVisible(false);
+        btnRound12.setVisible(false);
+        btnRound11.setVisible(false);
+        btnRound10.setVisible(false);
         parent.setVisible(false);
         this.setLocationRelativeTo(null);
     }
@@ -45,9 +45,7 @@ public class FrameCifrar extends JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        txtPlainText = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnRoundInicial = new javax.swing.JButton();
         btnRound1 = new javax.swing.JButton();
@@ -63,7 +61,7 @@ public class FrameCifrar extends JFrame {
         btnRound11 = new javax.swing.JButton();
         btnRound13 = new javax.swing.JButton();
         btnRoundFinal = new javax.swing.JButton();
-        txtCipherText = new javax.swing.JTextField();
+        txtPlainText = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButton15 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -76,44 +74,44 @@ public class FrameCifrar extends JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         btnRound12 = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
+        txtCipherText = new javax.swing.JFormattedTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Cifrar.PNG"))); // NOI18N
-
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel2.setText("Mensaje: ");
+        jLabel2.setText("Mensaje Cifrado en hexadecimal: ");
 
-        btnRoundInicial.setText("Round Inicial");
+        btnRoundInicial.setText("Round Final");
         btnRoundInicial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRoundInicialActionPerformed(evt);
             }
         });
 
-        btnRound1.setText("Round 1");
+        btnRound1.setText("Round 9");
         btnRound1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound1ActionPerformed(evt);
             }
         });
 
-        btnRound2.setText("Round 2");
+        btnRound2.setText("Round 8");
         btnRound2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound2ActionPerformed(evt);
             }
         });
 
-        btnRound3.setText("Round 3");
+        btnRound3.setText("Round 7");
         btnRound3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound3ActionPerformed(evt);
             }
         });
 
-        btnRound4.setText("Round 4");
+        btnRound4.setText("Round 6");
         btnRound4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound4ActionPerformed(evt);
@@ -127,65 +125,65 @@ public class FrameCifrar extends JFrame {
             }
         });
 
-        btnRound6.setText("Round 6");
+        btnRound6.setText("Round 4");
         btnRound6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound6ActionPerformed(evt);
             }
         });
 
-        btnRound7.setText("Round 7");
+        btnRound7.setText("Round 3");
         btnRound7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound7ActionPerformed(evt);
             }
         });
 
-        btnRound8.setText("Round 8");
+        btnRound8.setText("Round 2");
         btnRound8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound8ActionPerformed(evt);
             }
         });
 
-        btnRound9.setText("Round 9");
+        btnRound9.setText("Round 1");
         btnRound9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound9ActionPerformed(evt);
             }
         });
 
-        btnRound10.setText("Round 10");
+        btnRound10.setText("Round 13");
         btnRound10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound10ActionPerformed(evt);
             }
         });
 
-        btnRound11.setText("Round 11");
+        btnRound11.setText("Round 12");
         btnRound11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound11ActionPerformed(evt);
             }
         });
 
-        btnRound13.setText("Round 13");
+        btnRound13.setText("Round 10");
         btnRound13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound13ActionPerformed(evt);
             }
         });
 
-        btnRoundFinal.setText("Round Final");
+        btnRoundFinal.setText("Round Inicial");
         btnRoundFinal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRoundFinalActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Mensaje Cifrado:");
+        jLabel3.setText("Mensaje:");
 
-        jButton15.setText("Cifrar");
+        jButton15.setText("Descifrar");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton15ActionPerformed(evt);
@@ -252,7 +250,7 @@ public class FrameCifrar extends JFrame {
             }
         });
 
-        btnRound12.setText("Round 12");
+        btnRound12.setText("Round 11");
         btnRound12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRound12ActionPerformed(evt);
@@ -265,6 +263,19 @@ public class FrameCifrar extends JFrame {
                 btnAtrasActionPerformed(evt);
             }
         });
+
+        try {
+            txtCipherText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtCipherText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCipherTextActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vistas/Descifrar.PNG"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -291,21 +302,30 @@ public class FrameCifrar extends JFrame {
                                 .addComponent(jRadioButton1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtKey128))
-                            .addComponent(txtPlainText, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtCipherText))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(26, 26, 26)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addGap(34, 34, 34)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtPlainText, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnRoundInicial, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                            .addComponent(btnRound10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnRound11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnRound12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnRound13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnRound2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnRound3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnRound4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -314,14 +334,8 @@ public class FrameCifrar extends JFrame {
                             .addComponent(btnRound7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnRound8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnRound9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRound10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRound11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRound13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRoundFinal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRoundInicial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRound12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(txtCipherText, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30))
+                            .addComponent(btnRoundFinal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,9 +344,9 @@ public class FrameCifrar extends JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jLabel2)
-                        .addGap(3, 3, 3)
-                        .addComponent(txtPlainText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCipherText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -350,11 +364,19 @@ public class FrameCifrar extends JFrame {
                         .addComponent(jButton15)
                         .addGap(18, 18, 18)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addGap(69, 69, 69)
                         .addComponent(btnRoundInicial)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRound10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRound11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRound12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRound13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnRound1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -374,19 +396,11 @@ public class FrameCifrar extends JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnRound9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRound10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRound11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRound12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnRound13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnRoundFinal)
                         .addGap(34, 34, 34)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCipherText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPlainText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnAtras)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -399,79 +413,79 @@ public class FrameCifrar extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRoundInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRoundInicialActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round Inicial", 0);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round Inicial", 0);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRoundInicialActionPerformed
 
     private void btnRound1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound1ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 1", 1);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 1", 1);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound1ActionPerformed
 
     private void btnRound2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound2ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 2", 2);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 2", 2);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound2ActionPerformed
 
     private void btnRound3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound3ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 3", 3);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 3", 3);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound3ActionPerformed
 
     private void btnRound4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound4ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 4", 4);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 4", 4);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound4ActionPerformed
 
     private void btnRound5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound5ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 5", 5);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 5", 5);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound5ActionPerformed
 
     private void btnRound6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound6ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 6", 6);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 6", 6);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound6ActionPerformed
 
     private void btnRound7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound7ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 7", 7);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 7", 7);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound7ActionPerformed
 
     private void btnRound8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound8ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 8", 8);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 8", 8);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound8ActionPerformed
 
     private void btnRound9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound9ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 9", 9);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 9", 9);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound9ActionPerformed
 
     private void btnRound10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound10ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 10", 10);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 10", 10);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound10ActionPerformed
 
     private void btnRound11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound11ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 11", 11);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 11", 11);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound11ActionPerformed
   
     private void btnRound13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound13ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 13", 13);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 13", 13);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound13ActionPerformed
 
     private void btnRoundFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRoundFinalActionPerformed
         if(txtKey128.isEnabled()){
-            DiagRounds dgr = new DiagRounds(this, "Round final", 10);
+            DiagRoundsDes dgr = new DiagRoundsDes(this, "Round inicial", 10);
             dgr.setVisible(true);
         }else if(txtKey192.isEnabled()){
-            DiagRounds dgr = new DiagRounds(this, "Round final", 12);
+            DiagRoundsDes dgr = new DiagRoundsDes(this, "Round inicial", 12);
             dgr.setVisible(true);
         }else if(txtKey256.isEnabled()){
-            DiagRounds dgr = new DiagRounds(this, "Round final", 14);
+            DiagRoundsDes dgr = new DiagRoundsDes(this, "Round inicial", 14);
             dgr.setVisible(true);
         }        
     }//GEN-LAST:event_btnRoundFinalActionPerformed
@@ -479,25 +493,24 @@ public class FrameCifrar extends JFrame {
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         //byte[] testBytes = Functions.hexStringToByteArray("414553206573206d757920666163696c");
         //byte[] testKey = Functions.hexStringToByteArray("2B7e151628aed2a6abf7158809cf4f3c");
-        if(!txtPlainText.getText().equals("") && (!txtKey128.getText().equals("                                ") 
+        if(!txtCipherText.getText().equals("") && (!txtKey128.getText().equals("                                ") 
                 || !txtKey192.getText().equals("                                              ") 
                 || !txtKey256.getText().equals("                                                               "))){
-            
-            byte[] testBytes = txtPlainText.getText().getBytes();// para leer un decimal
-            //byte[] testBytes = Functions.hexStringToByteArray(txtPlainText.getText());//para leer un hexa
-            byte[] testKey;
+            byte[] cipher = Functions.hexStringToByteArray(txtCipherText.getText());
+            System.out.println(txtCipherText.getText());
+            byte[] key;
             if(txtKey128.isEnabled()){
-                testKey = Functions.hexStringToByteArray(txtKey128.getText());
+                key = Functions.hexStringToByteArray(txtKey128.getText());
             }else if(txtKey192.isEnabled()){
-                testKey = Functions.hexStringToByteArray(txtKey192.getText());
+                key = Functions.hexStringToByteArray(txtKey192.getText());
             }else{
-                testKey = Functions.hexStringToByteArray(txtKey256.getText());
+                key = Functions.hexStringToByteArray(txtKey256.getText());
             }
-            aes = new AES(testKey);	
-            byte[] cipher = aes.encrypt(testBytes);
-            txtCipherText.setText(Functions.bytesToHex(cipher));
-            System.out.println("Cipher:  " + Functions.bytesToHex(cipher));
-            System.out.println("Message: " + new String(aes.decrypt(cipher)));
+            aes = new AES(key);	
+            
+            txtPlainText.setText(new String(aes.decrypt(cipher)));
+//            //System.out.println("Cipher:  " + Functions.bytesToHex(cipher));
+//            //System.out.println("Message: " + new String(aes.decrypt(cipher)));
             enableRounds();
         }else{
             JOptionPane.showMessageDialog(this, "Aún no has escrito un mensaje o una llave", "ERROR",JOptionPane.ERROR_MESSAGE);
@@ -518,10 +531,10 @@ public class FrameCifrar extends JFrame {
         txtKey128.setEnabled(true);
         txtKey192.setEnabled(false);
         txtKey256.setEnabled(false);
-        btnRound10.setVisible(false);
-        btnRound11.setVisible(false);
-        btnRound12.setVisible(false);
         btnRound13.setVisible(false);
+        btnRound12.setVisible(false);
+        btnRound11.setVisible(false);
+        btnRound10.setVisible(false);
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void txtKey192ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKey192ActionPerformed
@@ -536,12 +549,12 @@ public class FrameCifrar extends JFrame {
         txtKey128.setEnabled(false);
         txtKey192.setEnabled(true);
         txtKey256.setEnabled(false);
-        btnRound12.setVisible(false);
         btnRound13.setVisible(false);
+        btnRound12.setVisible(false);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void btnRound12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRound12ActionPerformed
-        DiagRounds dgr = new DiagRounds(this, "Round 12", 12);
+        DiagRoundsDes dgr = new DiagRoundsDes(this, "Round 12", 12);
         dgr.setVisible(true);
     }//GEN-LAST:event_btnRound12ActionPerformed
 
@@ -549,6 +562,10 @@ public class FrameCifrar extends JFrame {
         parent.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
+
+    private void txtCipherTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCipherTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCipherTextActionPerformed
 
 //    /**
 //     * @param args the command line arguments
@@ -638,16 +655,16 @@ public class FrameCifrar extends JFrame {
     private javax.swing.JButton btnRoundInicial;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton15;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField txtCipherText;
+    private javax.swing.JFormattedTextField txtCipherText;
     private javax.swing.JFormattedTextField txtKey128;
     private javax.swing.JFormattedTextField txtKey192;
     private javax.swing.JFormattedTextField txtKey256;

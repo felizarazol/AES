@@ -18,6 +18,7 @@ import java.util.Arrays;
 public class Key extends Functions {
 	private byte[] key;
 	private int keyCount;
+	private int keyCountTotal;
 	private int Nb, Nr, Nk;
 	
 	/**
@@ -31,10 +32,11 @@ public class Key extends Functions {
 	public Key(byte[] key, int Nb, int Nr, int Nk) {
 		this.key  = new byte[4 * Nk * (Nr + 1)];
 		this.keyCount = 0;
+		this.keyCountTotal = (Nr+1)*16;
+                //System.out.println(keyCountTotal+" kkttt");
 		this.Nb = Nb;
 		this.Nr = Nr;
 		this.Nk = Nk;
-		
 		keyExpansion(key);
 	}
 	
@@ -135,8 +137,8 @@ public class Key extends Functions {
 	 *  @return  previous 16 bites of the expanded key
 	 */
 	public byte[] getDecryptKey() {
-		byte[] keyPart = Arrays.copyOfRange(this.key, keyCount - 16, keyCount);
-		keyCount -= 16;
+		byte[] keyPart = Arrays.copyOfRange(this.key, keyCountTotal - 16, keyCountTotal);
+		keyCountTotal -= 16;
 		return keyPart;
 	}
         
