@@ -30,8 +30,8 @@ public class AES {
 	private SecureRandom rand = new SecureRandom();
 	private Key key;
 	private State state;
-        ArrayList<ArrayList> roundsArray =  new ArrayList<ArrayList>();// este arreglo contiene un ArrayList de matrices por cada round de cifrado
-        ArrayList<ArrayList> roundsDesArray =  new ArrayList<ArrayList>();// este arreglo contiene un ArrayList de matrices por cada round de descifrado
+        public static ArrayList<ArrayList> roundsArray =  new ArrayList<ArrayList>();// este arreglo contiene un ArrayList de matrices por cada round de cifrado
+        public static ArrayList<ArrayList> roundsDesArray =  new ArrayList<ArrayList>();// este arreglo contiene un ArrayList de matrices por cada round de descifrado
 	
 	/**
 	 *  Takes in a 128, 296, or 256-bit key to use as the symmetric key
